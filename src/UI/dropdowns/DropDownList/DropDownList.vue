@@ -32,7 +32,8 @@
 
 <style module lang="scss">
 .container {
-  border: 1px solid red;
+  background-color: var(--white);
+  //border: 1px solid red;
   display: flex;
   flex-direction: column;
   width: max-content;
@@ -42,7 +43,7 @@
 }
 
 .option {
-  border: 1px dashed purple;
+  //border: 1px dashed purple;
   cursor: pointer;
   padding: 5px;
   display: flex;

@@ -14,6 +14,9 @@ const dropDownData = [
 
 <template>
   <DropDown title="Словарь" :list="dropDownData"/>
+  <DropDown title="Словарь" :list="dropDownData"/>
+  <DropDown title="Словарь" :list="dropDownData"/>
+  <DropDown title="Словарь" :list="dropDownData"/>
 </template>
 
 <style module lang="scss"></style>
