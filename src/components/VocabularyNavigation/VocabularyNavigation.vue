@@ -3,8 +3,8 @@
 const navLinks = [
     {href: '/terms', text: 'Термины'},
     {href: '/wordcomplexes', text: 'Словокомплексы'},
-    {href: 'stoptermins', text: 'Стоп-термины'},
-    {href: 'stoptcomplex', text: 'Стоп-словокомплексы'},
+    {href: 'stopterms', text: 'Стоп-термины'},
+    {href: 'stopcomplex', text: 'Стоп-словокомплексы'},
 ]
 </script>
 
