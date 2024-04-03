@@ -1,8 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import VocabularyNavigation from "../components/VocabularyNavigation/VocabularyNavigation.vue";
+</script>
 
 <template>
-  <div>Default Layout</div>
-  <slot/>
+    <main :class="$style.main">
+        <VocabularyNavigation/>
+        <div :class="$style.content">
+            <slot/>
+        </div>
+    </main>
 </template>
 
-<style scoped lang="scss"></style>
+<style module lang="scss">
+  .main {
+    min-height: 100vh;
+  }
+
+  .content {
+    width: 100%;
+    padding: 40px;
+  }
+</style>
