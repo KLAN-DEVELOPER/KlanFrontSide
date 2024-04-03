@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+// @ts-ignore
 import HomePage from "../pages/HomePage.vue";
 
 export const router = createRouter({
