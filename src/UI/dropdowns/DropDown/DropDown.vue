@@ -13,8 +13,8 @@ defineProps<ComponentData>()
 
 
 <template>
-    <div :class="$style.container">
-            <span :class="$style.title" @mouseenter="showList">{{title}}</span>
+    <div :class="$style.container" @mouseenter="showList" @mouseleave="hideList">
+            <span :class="$style.title">{{title}}</span>
             <DropDownList v-if="isOpen" :list="list" @on-select="hideList"/>
     </div>
 </template>
