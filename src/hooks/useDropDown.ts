@@ -4,12 +4,12 @@ import {ref} from "vue";
 export const useDropDown = () => {
     const isOpen = ref(false);
 
-    const toggleList = () => {
-        isOpen.value = !isOpen.value
+    const showList = () => {
+        isOpen.value = true
     }
 
     const hideList = () => {
         isOpen.value = false
     }
-    return {isOpen, toggleList, hideList}
+    return {isOpen, showList, hideList}
 }

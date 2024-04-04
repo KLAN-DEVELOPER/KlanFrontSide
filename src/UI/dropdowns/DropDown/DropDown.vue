@@ -7,15 +7,15 @@ interface ComponentData {
     title: string;
     list: ElementData[]
 }
-const {isOpen, toggleList, hideList} = useDropDown()
+const {isOpen, hideList, showList} = useDropDown()
 defineProps<ComponentData>()
 </script>
 
 
 <template>
     <div :class="$style.container">
-        <span :class="$style.title" @click="toggleList">{{title}}</span>
-        <DropDownList v-if="isOpen" :list="list" @on-select="hideList"/>
+            <span :class="$style.title" @mouseenter="showList">{{title}}</span>
+            <DropDownList v-if="isOpen" :list="list" @on-select="hideList"/>
     </div>
 </template>
 

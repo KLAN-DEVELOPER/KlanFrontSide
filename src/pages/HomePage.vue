@@ -13,10 +13,12 @@ const dropDownData = [
 </script>
 
 <template>
-  <DropDown title="Словарь" :list="dropDownData"/>
-  <DropDown title="Словарь" :list="dropDownData"/>
-  <DropDown title="Словарь" :list="dropDownData"/>
-  <DropDown title="Словарь" :list="dropDownData"/>
+    <div style="display: flex">
+        <DropDown title="Словарь" :list="dropDownData"/>
+        <DropDown title="Словарь" :list="dropDownData"/>
+        <DropDown title="Словарь" :list="dropDownData"/>
+        <DropDown title="Словарь" :list="dropDownData"/>
+    </div>
 </template>
 
 <style module lang="scss"></style>
