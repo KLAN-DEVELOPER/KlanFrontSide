@@ -1,12 +1,7 @@
-<script setup lang="ts">
-import VocabularyNavigation from "../components/VocabularyNavigation/VocabularyNavigation.vue";
-import ApplicationMenu from "../components/ApplicationMenu/ApplicationMenu.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
     <main :class="$style.main">
-        <ApplicationMenu/>
-        <VocabularyNavigation/>
         <div :class="$style.content">
             <slot/>
         </div>

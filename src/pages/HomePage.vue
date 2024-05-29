@@ -1,19 +1,37 @@
 <script setup lang="ts">
-import BaseTable from "../UI/table/BaseTable/BaseTable.vue";
-import type {TermsDataInterface} from "../UI/table/BaseTable/BaseTable.vue";
+import DefaultTable, {TableHeader} from "../UI/table/DefaultTable.vue";
 
-const headers:string[] = ["Лексема", "Часть речи", "Количество в словаре"]
-const body:TermsDataInterface[] = [
-    {value: "слово", speechPart: "сущ.", count: 1},
-    {value: "слово", speechPart: "глаг.", count: 2},
-    {value: "слово", speechPart: "прич.", count: 3},
-    {value: "слово", speechPart: "союз", count: 4},
+
+const headers: TableHeader[] = [
+    {title: 'Лексемма', value: 'lemma'},
+    {title: 'Часть речи', value: 'speechPart'},
+    {title: 'Найдено', value: 'count'},
 ]
 
+const data = [
+    {
+        lemma: 'Лексема 1',
+        speechPart: 'Инф',
+        count: 5
+    },
+    {
+        lemma: 'Лексема 2',
+        speechPart: 'Глаг',
+        count: 1
+    },
+    {
+        lemma: 'Лексема 3',
+        speechPart: 'Союз',
+        count: 10
+    },
+]
 </script>
 
 <template>
-  <BaseTable :headers="headers" :body="body"/>
+  <DefaultTable
+  :headers="headers"
+  :items="data"
+  />
 </template>
 
 <style module lang="scss"></style>
