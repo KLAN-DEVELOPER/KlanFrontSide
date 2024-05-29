@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import DefaultTable, {TableHeader} from "../UI/table/DefaultTable.vue";
-import {ref} from "vue";
 
 
 const headers: TableHeader[] = [
@@ -27,7 +26,6 @@ const data = [
     },
 ]
 
-const search = ref('')
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {ref} from "vue";
+import {mdiMagnify} from "@mdi/js";
 
 export interface TableHeader {
     title: string
@@ -25,7 +26,7 @@ const search = ref('')
         <v-text-field
             v-model="search"
             label="Search"
-            prepend-inner-icon="mdi-magnify"
+            :prepend-inner-icon="mdiMagnify"
             variant="outlined"
             hide-details
             single-line

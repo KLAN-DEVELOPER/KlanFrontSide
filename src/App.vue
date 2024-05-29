@@ -13,7 +13,9 @@ const layout = computed(() => {
 </script>
 
 <template>
-    <component :is="layout">
-        <RouterView />
-    </component>
+    <v-app>
+        <component :is="layout">
+            <RouterView />
+        </component>
+    </v-app>
 </template>
