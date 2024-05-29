@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import NavigationAside from "../components/NaviagtionAside/NavigationAside.vue";
 import {mdiMagnify} from "@mdi/js";
+import {useNavigationAsideStore} from "../store/NavigationAsideStore.ts";
+
+const navigationAsideStore = useNavigationAsideStore();
+
 </script>
 
 <template>
@@ -11,6 +15,7 @@ import {mdiMagnify} from "@mdi/js";
             slim
             position="absolute"
             :class="$style.burger"
+            @click="navigationAsideStore.toggleNavigationAside()"
         />
     </v-container>
     <NavigationAside/>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-
-  import {ref} from "vue";
   import {mdiAlertOctagon, mdiDelete, mdiInboxArrowDown} from "@mdi/js";
   import {mdiSend} from "@mdi/js";
+  import {useNavigationAsideStore} from "../../store/NavigationAsideStore.ts";
+
+  const navigationAsideStore = useNavigationAsideStore();
 
   const links =  [
       [mdiInboxArrowDown, 'Inbox'],
@@ -10,14 +11,14 @@
       [mdiDelete, 'Trash'],
       [mdiAlertOctagon, 'Spam'],
   ]
-
-  const drawer = ref()
 </script>
 
 
 <template>
     <v-navigation-drawer
-        v-model="drawer"
+        v-model="navigationAsideStore.isDisplayed"
+        persistent
+        permanent
     >
         <v-sheet
                 class="pa-4"
