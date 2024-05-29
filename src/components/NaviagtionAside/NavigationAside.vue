@@ -1,15 +1,13 @@
 <script setup lang="ts">
-  import {mdiAlertOctagon, mdiDelete, mdiInboxArrowDown} from "@mdi/js";
-  import {mdiSend} from "@mdi/js";
   import {useNavigationAsideStore} from "../../store/NavigationAsideStore.ts";
+  import {useUserDataStore} from "../../store/UserDataStore.ts";
 
   const navigationAsideStore = useNavigationAsideStore();
+  const userDataStore = useUserDataStore();
 
   const links =  [
-      [mdiInboxArrowDown, 'Inbox'],
-      [mdiSend, 'Send'],
-      [mdiDelete, 'Trash'],
-      [mdiAlertOctagon, 'Spam'],
+      {text: 'Термины', path: 'terms'},
+      {text: 'Словокомплексы', path: 'wordcomplexes'},
   ]
 </script>
 
@@ -26,27 +24,30 @@
         >
             <v-avatar
                     class="mb-4"
-                    color="grey-darken-1"
+                    color="orange-darken-1"
                     size="64"
-            ></v-avatar>
+            >
+                {{userDataStore.getEmailFirstLetter}}
+            </v-avatar>
 
-            <div>john@google.com</div>
+            <div>{{userDataStore.email}}</div>
         </v-sheet>
 
         <v-divider></v-divider>
 
         <v-list>
+            <RouterLink v-for="(link, index) in links"  :key="index" :to="link.path" :class="$style.link">
             <v-list-item
-                    v-for="[icon, text] in links"
-                    :key="icon"
-                    :prepend-icon="icon"
-                    :title="text"
+                    :title="link.text"
                     link
             ></v-list-item>
+            </RouterLink>
         </v-list>
     </v-navigation-drawer>
 </template>
 
 <style module lang="scss">
-
+    .link {
+        text-decoration: none;
+    }
 </style>
