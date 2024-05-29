@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import {ref} from "vue";
+
 export interface TableHeader {
     title: string
     value?: string
@@ -12,13 +14,32 @@ interface DefaultTableProps {
 }
 
 defineProps<DefaultTableProps>()
+
+const search = ref('')
+
 </script>
 
 <template>
+    <v-card>
+    <template #text>
+        <v-text-field
+            v-model="search"
+            label="Search"
+            prepend-inner-icon="mdi-magnify"
+            variant="outlined"
+            hide-details
+            single-line
+        ></v-text-field>
+    </template>
+
     <v-data-table
         :headers="headers as any[]"
         :items="items"
+        :search="search"
+        :hide-default-footer="true"
     />
+</v-card>
+
 </template>
 
 
