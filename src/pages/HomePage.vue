@@ -32,7 +32,12 @@ const data = [
   <DefaultTable
   :headers="headers"
   :items="data"
+  :class="$style.table"
   />
 </template>
 
-<style module lang="scss"></style>
+<style module lang="scss">
+.table {
+  margin-top: 10px
+}
+</style>
